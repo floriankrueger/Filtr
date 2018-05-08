@@ -22,6 +22,7 @@ public class EffectFilter: CIFilter {
     
     public let type: EffectFilterType
 
+    @objc
     public var inputImage: CIImage?
 
     public var inputIntensity: Float = 1.0 {
