@@ -22,9 +22,9 @@ class ViewController: NSViewController {
         let filterImage = EffectFilterType.color2.thumbnail
         filterView.image = filterImage
 
-        testCustomFilter()
+        //testCustomFilter()
         //filter()
-        //filterMultipleTest()
+        filterMultipleTest()
         //createfcube()
         //createFcubes()
         //transformLuts()
@@ -99,7 +99,7 @@ class ViewController: NSViewController {
                 
                 let fileName = fileURL.lastPathComponent.components(separatedBy: ".").first!
                 
-                let pngData = ImageConverter.imageDataFrom(image, compression: nil, type: .PNG)!
+                let pngData = ImageConverter.imageDataFrom(image, compression: nil, type: .png)!
                 let path = Constants.documentsDirectory.stringByAppendingPathComponent("filtr/imgly32luts/\(fileName).png")
                 try? pngData.write(to: URL(fileURLWithPath: path), options: .atomic)
                 print("SAVING \(fileName).png")
@@ -134,7 +134,7 @@ class ViewController: NSViewController {
 
             let filteredImage = Filtr.process(image, filterStack: filterStack)!
 
-            let jpegData = ImageConverter.imageDataFrom(filteredImage, compression: 1.0, type: .JPEG)!
+            let jpegData = ImageConverter.imageDataFrom(filteredImage, compression: 1.0, type: .jpeg)!
             let path = Constants.documentsDirectory.stringByAppendingPathComponent("filtr/tests/\(fileName).jpg")
             try? jpegData.write(to: URL(fileURLWithPath: path), options: .atomic)
 
@@ -186,31 +186,31 @@ class ViewController: NSViewController {
 
         // CREATE JPEG DATA
         
-        let jpegData = ImageConverter.imageDataFrom(filteredImage, compression: 1.0, type: .JPEG)!
+        let jpegData = ImageConverter.imageDataFrom(filteredImage, compression: 1.0, type: .jpeg)!
         let path = Constants.documentsDirectory.stringByAppendingPathComponent("filtr/tests/edited.jpg")
         let url = URL(fileURLWithPath: path)
         try? jpegData.write(to: url, options: .atomic)
     }
-
-    func testCustomFilter() {
-        let lutPath = Constants.documentsDirectory.stringByAppendingPathComponent("filtr/otherluts/Z32.tif")
-        let lutImage = NSImage(contentsOfFile: lutPath)!
-        let lutData = LUTConverter.cubeDataForLut32(lutImage)!
-
-        let effectFilter = EffectFilter(customFilter: lutData, withDimension: .thirtyTwo)
-        let filterStack = FilterStack()
-        filterStack.effectFilter = effectFilter
-
-        let imagePath = Constants.documentsDirectory.stringByAppendingPathComponent("filtr/orig4.jpg")
-        let inputImage = NSImage(contentsOfFile: imagePath)!
-        let filteredImage = Filtr.process(inputImage, filterStack: filterStack)!
-
-        let jpegData = ImageConverter.imageDataFrom(filteredImage, compression: 1.0, type: .JPEG)!
-        let path = Constants.documentsDirectory.stringByAppendingPathComponent("filtr/tests/edited.jpg")
-        let url = URL(fileURLWithPath: path)
-        try? jpegData.write(to: url, options: .atomic)
-
-    }
+//
+//    func testCustomFilter() {
+//        let lutPath = Constants.documentsDirectory.stringByAppendingPathComponent("filtr/otherluts/Z32.tif")
+//        let lutImage = NSImage(contentsOfFile: lutPath)!
+//        let lutData = LUTConverter.cubeDataForLut32(lutImage)!
+//
+//        let effectFilter = EffectFilter(customFilter: lutData, withDimension: .thirtyTwo)
+//        let filterStack = FilterStack()
+//        filterStack.effectFilter = effectFilter
+//
+//        let imagePath = Constants.documentsDirectory.stringByAppendingPathComponent("filtr/orig4.jpg")
+//        let inputImage = NSImage(contentsOfFile: imagePath)!
+//        let filteredImage = Filtr.process(inputImage, filterStack: filterStack)!
+//
+//        let jpegData = ImageConverter.imageDataFrom(filteredImage, compression: 1.0, type: .jpeg)!
+//        let path = Constants.documentsDirectory.stringByAppendingPathComponent("filtr/tests/edited.jpg")
+//        let url = URL(fileURLWithPath: path)
+//        try? jpegData.write(to: url, options: .atomic)
+//
+//    }
 
 }
 

@@ -37,7 +37,7 @@ public struct ImageConverter {
         return image
     }
     
-    public static func imageDataFrom(_ nsImage: NSImage, compression: Float?, type: NSBitmapImageFileType) -> Data? {        
+    public static func imageDataFrom(_ nsImage: NSImage, compression: Float?, type: NSBitmapImageRep.FileType) -> Data? {        
         guard let tiffData = nsImage.tiffRepresentation else {
             return nil
         }
@@ -45,10 +45,10 @@ public struct ImageConverter {
         guard let bitmapImageRep = NSBitmapImageRep(data: tiffData) else {
             return nil
         }
-        
-        var properties: [String : AnyObject] = [:]
+
+        var properties: [NSBitmapImageRep.PropertyKey : Any] = [:]
         if let compression = compression{
-            properties[NSImageCompressionFactor] = compression as AnyObject?
+            properties[NSBitmapImageRep.PropertyKey.compressionFactor] = compression as AnyObject?
         }
         
         return bitmapImageRep.representation(using: type, properties: properties)

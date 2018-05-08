@@ -67,7 +67,7 @@ public enum EffectFilterType: String {
     #if os(OSX)
     
     public var thumbnail: NSImage? {
-        return bundle.image(forResource: "\(self.rawValue)-medium")
+        return bundle.image(forResource: NSImage.Name(rawValue: "\(self.rawValue)-medium"))
     }
     
     #else

@@ -53,7 +53,7 @@ public class FilterStack {
     
     public var activeFilters: [CIFilter] {
         let allFilters: [CIFilter?] = [effectFilter, fadeFilter]
-        return allFilters.flatMap({ $0 })
+        return allFilters.compactMap({ $0 })
     }
     
 }

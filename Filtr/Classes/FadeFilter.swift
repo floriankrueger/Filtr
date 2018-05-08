@@ -40,7 +40,7 @@ public class FadeFilter: CIFilter {
             return inputImage
         }
 
-        let inputParameters: [String : Any] = [kCIInputImageKey : inputImage, kCIInputBackgroundImageKey : colorOutput.cropping(to: inputImage.extent)]
+        let inputParameters: [String : Any] = [kCIInputImageKey : inputImage, kCIInputBackgroundImageKey : colorOutput.cropped(to: inputImage.extent)]
         guard let lightenBlendFilter = CIFilter(name: "CILightenBlendMode", withInputParameters: inputParameters) else {
             return inputImage
         }

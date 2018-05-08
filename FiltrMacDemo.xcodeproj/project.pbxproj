@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		063DFA831E2B077200FB4F13 /* Filtr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 063DFA821E2B077200FB4F13 /* Filtr.framework */; };
-		063DFAB71E2B09D900FB4F13 /* Filtr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 063DFA821E2B077200FB4F13 /* Filtr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		069A107B1D1CAB5B00357319 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A107A1D1CAB5B00357319 /* AppDelegate.swift */; };
 		069A107D1D1CAB5B00357319 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069A107C1D1CAB5B00357319 /* ViewController.swift */; };
 		069A107F1D1CAB5B00357319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 069A107E1D1CAB5B00357319 /* Assets.xcassets */; };
 		069A10821D1CAB5B00357319 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 069A10801D1CAB5B00357319 /* Main.storyboard */; };
+		A564F36F20A18CCB00048024 /* Filtr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A564F36E20A18CCB00048024 /* Filtr.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,7 +21,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				063DFAB71E2B09D900FB4F13 /* Filtr.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -30,13 +28,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		063DFA821E2B077200FB4F13 /* Filtr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Filtr.framework; sourceTree = "<group>"; };
 		069A10771D1CAB5B00357319 /* FiltrMacDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FiltrMacDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		069A107A1D1CAB5B00357319 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		069A107C1D1CAB5B00357319 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		069A107E1D1CAB5B00357319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		069A10811D1CAB5B00357319 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		069A10831D1CAB5B00357319 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A564F36E20A18CCB00048024 /* Filtr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Filtr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				063DFA831E2B077200FB4F13 /* Filtr.framework in Frameworks */,
+				A564F36F20A18CCB00048024 /* Filtr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,9 +52,9 @@
 		069A106E1D1CAB5B00357319 = {
 			isa = PBXGroup;
 			children = (
-				063DFA821E2B077200FB4F13 /* Filtr.framework */,
 				069A10791D1CAB5B00357319 /* FiltrMacDemo */,
 				069A10781D1CAB5B00357319 /* Products */,
+				A564F36D20A18CCB00048024 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +76,14 @@
 				069A10831D1CAB5B00357319 /* Info.plist */,
 			);
 			path = FiltrMacDemo;
+			sourceTree = "<group>";
+		};
+		A564F36D20A18CCB00048024 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A564F36E20A18CCB00048024 /* Filtr.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,12 +114,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = danielozano;
 				TargetAttributes = {
 					069A10761D1CAB5B00357319 = {
 						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -180,14 +186,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -227,14 +241,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -271,7 +293,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = danielozano.FiltrMacDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -288,7 +311,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = danielozano.FiltrMacDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
